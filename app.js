@@ -92,17 +92,15 @@ let app = new Vue(
         }, 
         methods: {
             sendMessage: function(currentIndex) {
-                const message = {
-                    date: '28/02/2022',
-                    text: this.newMessage,
-                    status: 'sent'
+                if (this.newMessage !== '') {
+                    const message = {
+                        date: '28/02/2022 18:56',
+                        text: this.newMessage,
+                        status: 'sent'
+                    }
+                this.contacts[currentIndex].messages.push(message)
                 }
-
-                this.contacts[0].messages.push(message)
                 this.newMessage = '';
-                // console.log(currentIndex)
-                console.log(this.contacts[0])
-                // console.log(message),
             }
         }
     }
