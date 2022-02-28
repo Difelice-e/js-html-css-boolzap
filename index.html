@@ -113,7 +113,7 @@
                         </ul>
                     </div>
     
-                    <input class="contact-search" type="text" v-model="newMessage" @keyUp.enter="sendMessage(currentIndex)" placeholder="Scrivi un messaggio">
+                    <input class="contact-search" type="text" v-model="newMessage" @keyUp.enter="sendMessage(currentIndex), receiveMessage(currentIndex)" placeholder="Scrivi un messaggio">
     
                     <div class="user-command">
                         <ul>
