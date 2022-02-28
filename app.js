@@ -91,6 +91,15 @@ let app = new Vue(
                 ]
         }, 
         methods: {
+            // receiveMessage: function(currentIndex) {
+            //     const message = {
+            //         date: '28/02/2022 18:56',
+            //         text: 'ok',
+            //         status: 'received'
+            //     }
+            //     this.contacts[currentIndex].messages.push(message);
+            //     console.log(message)
+            // },
             sendMessage: function(currentIndex) {
                 if (this.newMessage !== '') {
                     const message = {
@@ -101,7 +110,15 @@ let app = new Vue(
                 this.contacts[currentIndex].messages.push(message)
                 }
                 this.newMessage = '';
-            }
+                // receiveMessage(currentIndex);
+                const messageBack = {
+                    date: '28/02/2022 18:56',
+                    text: 'ok',
+                    status: 'received'
+                }
+                this.contacts[currentIndex].messages.push(messageBack);
+                console.log(message)
+            },
         }
     }
 )
