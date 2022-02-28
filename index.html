@@ -58,7 +58,7 @@
                 </div>
     
                 <div class="contact-area px-10">
-                    <div v-for="contact in contacts" class="contact-user">
+                    <div v-for="(contact, index) in contacts" class="contact-user" @click="currentIndex = index">
                         <div class="contact-info">
                             <div class="profile-image-wrapper">
                                 <img :src="'img/' + contact.avatar" alt="">
@@ -78,11 +78,11 @@
                 <div class="contact-header px-10">
                     <div class="contact-info">
                         <div class="profile-image-wrapper">
-                            <img :src="'img/' + contacts[0].avatar" alt="">
+                            <img :src="'img/' + contacts[currentIndex].avatar" alt="">
                         </div>
     
                         <div>
-                            <h4 class="user-name">{{contacts[0].name}}</h4>
+                            <h4 class="user-name">{{contacts[currentIndex].name}}</h4>
                             <p class="user-last-message">ultimo accesso</p>
                         </div>
                     </div>
@@ -98,8 +98,8 @@
                     </div>
                 </div>
     
-                <div class="chat-area">
-                    <div v-for="message in contacts[0].messages" class="message-wrapper" :class="message.status == 'sent' ? 'sent-message' : 'received-message'">
+                <div class="chat-area" v-for="(contact, index) in contacts" :class="index == currentIndex ? 'active' : ' '">
+                    <div v-for="message in contacts[index].messages" class="message-wrapper" :class="message.status == 'sent' ? 'sent-message' : 'received-message'">
                         <span class="message-text">{{message.text}}</span>     
                         <span class="message-time">{{message.date}}</span>           
                     </div>
