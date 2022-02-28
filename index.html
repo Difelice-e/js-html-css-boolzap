@@ -29,7 +29,7 @@
             <div id="user-tab">
                 <div class="contact-header px-10">
                     <div class="profile-image-wrapper-40">
-                        <img class="profile-image" src="https://picsum.photos/200/300">
+                        <img class="profile-image" src="img/user-image.jpg">
                     </div>
     
                     <div class="user-command">
@@ -78,11 +78,11 @@
                 <div class="contact-header px-10">
                     <div class="contact-info">
                         <div class="profile-image-wrapper">
-                            <img src="https://picsum.photos/200/300" alt="">
+                            <img :src="'img/' + contacts[0].avatar" alt="">
                         </div>
     
                         <div>
-                            <h4 class="user-name">nome contatto</h4>
+                            <h4 class="user-name">{{contacts[0].name}}</h4>
                             <p class="user-last-message">ultimo accesso</p>
                         </div>
                     </div>
@@ -99,14 +99,9 @@
                 </div>
     
                 <div class="chat-area">
-                    <div class="message-wrapper sent-message">
-                        <span class="message-text">Hai portato a spasso il cane?</span>     
-                        <span class="message-time">time</span>           
-                    </div>
-    
-                    <div class="message-wrapper received-message">
-                        <span class="message-text">No!</span>     
-                        <span class="message-time">time</span>           
+                    <div v-for="message in contacts[0].messages" class="message-wrapper" :class="message.status == 'sent' ? 'sent-message' : 'received-message'">
+                        <span class="message-text">{{message.text}}</span>     
+                        <span class="message-time">{{message.date}}</span>           
                     </div>
                 </div>
     
