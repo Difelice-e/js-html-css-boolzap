@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* barra dei comandi superiore */
+#tab {
+    background-color: green;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    padding: 0 10px;
+}
+
+#logo {
+    color: white;
+    line-height: 30px;
+}
+
+#command {
+    color: white;
+    line-height: 30px;
+}
+
+#command ul {
+    list-style-type: none;
+    display: flex;
+    vertical-align: middle;
+    gap: 18px;
+}
+
+/* zona principale dell'app  */
+#main-content {
+    flex-grow: 1;
+    border: 1px solid red;
+    display: flex;
+}
+
+/* sezione di sinistra, contatti + profilo  */
+#user-tab {
+    width: 500px;
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px dashed black;
+}
+
+.alert-pop {
+    height: 80px;
+    background-color: lightblue;
+}
+
+.search-bar {
+    height: 45px;
+    border: 1px dashed black;
+}
+
+.contact-area {
+    flex-grow: 1;
+    border: 1px dashed black;
+}
+
+/* sezione di destra, chat in corso */
+#chat-tab {
+    flex-grow: 1;
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-area {
+    flex-grow: 1;
+    border: 1px dashed black;
+}
+
+.write-message-area {
+    height: 60px;
+    border: 1px dashed black;
+}
