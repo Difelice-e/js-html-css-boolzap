@@ -27,6 +27,10 @@ body {
     padding: 0 10px;
 }
 
+.px-30 {
+    padding: 20px 70px;
+}
+
 /* barra dei comandi superiore */
 #tab {
     background-color: green;
@@ -57,14 +61,12 @@ body {
 /* zona principale dell'app  */
 #main-content {
     flex-grow: 1;
-    border: 1px solid red;
     display: flex;
 }
 
 /* sezione di sinistra, contatti + profilo  */
 #user-tab {
     width: 500px;
-    border: 2px solid green;
     display: flex;
     flex-direction: column;
 }
@@ -75,7 +77,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px dashed black;
 }
 
 .profile-image-wrapper {
@@ -136,7 +137,6 @@ body {
 /* barra di ricerca   */
 .search-bar {
     height: 45px;
-    border: 1px dashed black;
     display: flex;
     align-items: center;
 }
@@ -144,6 +144,8 @@ body {
 .contact-search {
     flex-grow: 1;
     border: none;
+    height: 90%;
+    padding: 0 10px;
 }
 
 .search-icon {
@@ -154,7 +156,6 @@ body {
 /* area dei contatti  */
 .contact-area {
     flex-grow: 1;
-    border: 1px dashed black;
 }
 
 .contact-user {
@@ -187,19 +188,54 @@ body {
 /* sezione di destra, chat in corso */
 #chat-tab {
     flex-grow: 1;
-    border: 2px solid blue;
     display: flex;
     flex-direction: column;
 }
 
+/* zona dei messaggi  */
 .chat-area {
     flex-grow: 1;
-    border: 1px dashed black;
 }
 
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.message-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    min-width: 50px;
+    gap: 10px;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.sent-message {
+    background-color: lightgreen;
+    align-self: flex-end;
+}
+
+.received-message {
+    background-color: white;
+    align-self: flex-start;
+}
+
+.message-text {
+    align-self: flex-start;
+}
+
+.message-time {
+    color: grey;
+    font-size: 0.6rem;
+    align-self: flex-end;
+}
+
+/* zona di scrittura del messaggio  */
 .write-message-area {
     height: 60px;
-    border: 1px dashed black;
     display: flex;
     align-items: center;
     gap: 18px;
