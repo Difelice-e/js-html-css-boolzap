@@ -10,13 +10,20 @@ body {
     height: 100vh;
 }
 
+.profile-image-wrapper-50 {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
 /* barra dei comandi superiore */
 #tab {
     background-color: green;
     height: 30px;
     display: flex;
     justify-content: space-between;
-    vertical-align: middle;
+    align-items: center;
     padding: 0 10px;
 }
 
@@ -33,7 +40,7 @@ body {
 #command ul {
     list-style-type: none;
     display: flex;
-    vertical-align: middle;
+    align-items: center;
     gap: 18px;
 }
 
@@ -50,28 +57,88 @@ body {
     border: 2px solid green;
     display: flex;
     flex-direction: column;
+    padding: 0 10px;
 }
 
+/* sezione profilo  */
 .contact-header {
     height: 60px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border: 1px dashed black;
 }
 
+.profile-image-wrapper {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.profile-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.user-command {
+   display: flex;
+}
+
+.user-command ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* alert notifiche   */
 .alert-pop {
     height: 80px;
     background-color: lightblue;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
+.alert-pop-link {
+    text-decoration: underline;
+}
+
+/* barra di ricerca   */
 .search-bar {
     height: 45px;
     border: 1px dashed black;
+    display: flex;
+    align-items: center;
 }
 
+.contact-search {
+    flex-grow: 1;
+}
+
+.search-icon {
+    padding: 0 10px;
+}
+
+/* area dei contatti  */
 .contact-area {
     flex-grow: 1;
     border: 1px dashed black;
+}
+
+.contact-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.contact-info {
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
 /* sezione di destra, chat in corso */
