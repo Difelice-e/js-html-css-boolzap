@@ -4,20 +4,20 @@
     box-sizing: border-box;
 }
 
-body {
+#root {
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
-.profile-image-wrapper-50 {
+.profile-image-wrapper {
     border-radius: 50%;
     width: 50px;
     height: 50px;
     overflow: hidden;
 }
 
-.profile-image-wrapper-50 img {
+.profile-image-wrapper img {
     width: 100%;
     object-fit: cover;
     object-position: center;
@@ -27,13 +27,9 @@ body {
     padding: 0 10px;
 }
 
-.px-30 {
-    padding: 20px 70px;
-}
-
 /* barra dei comandi superiore */
 #tab {
-    background-color: green;
+    background-color: #00A884;
     height: 30px;
     display: flex;
     justify-content: space-between;
@@ -42,12 +38,12 @@ body {
 }
 
 #logo {
-    color: white;
+    color: #9FDED1;
     line-height: 30px;
 }
 
 #command {
-    color: white;
+    color: #9FDED1;
     line-height: 30px;
 }
 
@@ -79,7 +75,7 @@ body {
     align-items: center;
 }
 
-.profile-image-wrapper {
+.profile-image-wrapper-40 {
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -94,7 +90,7 @@ body {
 
 .user-command {
    display: flex;
-   color: grey;
+   color: #5D6D76;
 }
 
 .user-command ul {
@@ -102,13 +98,13 @@ body {
     display: flex;
     align-items: center;
     gap: 25px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 /* alert notifiche   */
 .alert-pop {
     height: 80px;
-    background-color: lightblue;
+    background-color: #8EDAFD;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -120,7 +116,7 @@ body {
 
 .alert-pop-link {
     text-decoration: underline;
-    color: grey;
+    color: #5D6D76;
 }
 
 .bell-wrapper {
@@ -131,7 +127,7 @@ body {
 }
 
 .bell-icon {
-    color: lightblue;
+    color: #8EDAFD;
 }
 
 /* barra di ricerca   */
@@ -150,7 +146,7 @@ body {
 
 .search-icon {
     padding: 0 18px;
-    color: grey;
+    color: #5D6D76;
 }
 
 /* area dei contatti  */
@@ -173,15 +169,16 @@ body {
 
 .user-name {
     font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .user-last-message {
     font-size: 1rem;
-    color: grey;
+    color: #5D6D76;
 }
 
 .contact-time {
-    color: grey;
+    color: #5D6D76;
     font-size: 0.8rem;
 }
 
@@ -195,6 +192,8 @@ body {
 /* zona dei messaggi  */
 .chat-area {
     flex-grow: 1;
+    padding: 20px 70px;
+    background-color: #EFEAE2;
 }
 
 .chat-area {
@@ -206,15 +205,16 @@ body {
 .message-wrapper {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #D1CFC8;
     min-width: 50px;
     gap: 10px;
     padding: 5px 8px;
     border-radius: 5px;
+    min-height: 34px;
 }
 
 .sent-message {
-    background-color: lightgreen;
+    background-color: #D9FDD3;
     align-self: flex-end;
 }
 
@@ -228,8 +228,8 @@ body {
 }
 
 .message-time {
-    color: grey;
-    font-size: 0.6rem;
+    color: #5D6D76;
+    font-size: 0.7rem;
     align-self: flex-end;
 }
 
