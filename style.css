@@ -17,6 +17,15 @@ body {
     overflow: hidden;
 }
 
+.profile-image-wrapper-50 img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.px-10 {
+    padding: 0 10px;
+}
 /* barra dei comandi superiore */
 #tab {
     background-color: green;
@@ -57,7 +66,6 @@ body {
     border: 2px solid green;
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
 }
 
 /* sezione profilo  */
@@ -84,13 +92,15 @@ body {
 
 .user-command {
    display: flex;
+   color: grey;
 }
 
 .user-command ul {
     list-style-type: none;
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 25px;
+    font-size: 1.4rem;
 }
 
 /* alert notifiche   */
@@ -102,8 +112,24 @@ body {
     gap: 8px;
 }
 
+.alert-pop-text p {
+    font-weight: 600;
+}
+
 .alert-pop-link {
     text-decoration: underline;
+    color: grey;
+}
+
+.bell-wrapper {
+    background-color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bell-icon {
+    color: lightblue;
 }
 
 /* barra di ricerca   */
@@ -116,10 +142,12 @@ body {
 
 .contact-search {
     flex-grow: 1;
+    border: none;
 }
 
 .search-icon {
-    padding: 0 10px;
+    padding: 0 18px;
+    color: grey;
 }
 
 /* area dei contatti  */
@@ -139,6 +167,20 @@ body {
     display: flex;
     gap: 8px;
     align-items: center;
+}
+
+.user-name {
+    font-size: 1.2rem;
+}
+
+.user-last-message {
+    font-size: 1rem;
+    color: grey;
+}
+
+.contact-time {
+    color: grey;
+    font-size: 0.8rem;
 }
 
 /* sezione di destra, chat in corso */
