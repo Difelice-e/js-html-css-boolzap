@@ -2,7 +2,8 @@ let app = new Vue(
     {
         el: '#root',
         data: {
-            currentIndex: 1,
+            newMessage: '',
+            currentIndex: 0,
             contacts: [
                 {
                 name: 'Barack Obama',
@@ -89,6 +90,20 @@ let app = new Vue(
                 },
                 ]
         }, 
-        methods: {}
+        methods: {
+            sendMessage: function(currentIndex) {
+                const message = {
+                    date: '28/02/2022',
+                    text: this.newMessage,
+                    status: 'sent'
+                }
+
+                this.contacts[0].messages.push(message)
+                this.newMessage = '';
+                // console.log(currentIndex)
+                console.log(this.contacts[0])
+                // console.log(message),
+            }
+        }
     }
 )

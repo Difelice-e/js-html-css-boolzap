@@ -158,7 +158,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px 20px;
+}
+
+.contact-user.active {
+    background-color: #D1CFC8;
 }
 
 .contact-info {
@@ -197,6 +201,7 @@
     display: none;
     flex-direction: column;
     gap: 5px;
+    background-image: url(img/whatsapp-bg.jpg);
 }
 
 .chat-area.active {
