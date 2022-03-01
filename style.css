@@ -173,6 +173,10 @@
     background-color: rgba(216, 214, 210, 0.5);
 }
 
+.contact-user.invisible {
+    display: none;
+}
+
 .contact-info {
     display: flex;
     gap: 8px;

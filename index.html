@@ -54,11 +54,11 @@
     
                 <div class="search-bar px-10">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input class="contact-search" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input class="contact-search" type="text" placeholder="Cerca o inizia una nuova chat" v-model="newSearch" @keyUp="findChat">
                 </div>
     
                 <div class="contact-area">
-                    <div v-for="(contact, index) in contacts" class="contact-user" :class="index == currentIndex ? 'active' : ' '" @click="currentIndex = index">
+                    <div v-for="(contact, index) in contacts" class="contact-user" :class="[index == currentIndex ? 'active' : ' ', contact.visible == false ? 'invisible' : '']" @click="currentIndex = index">
                         <div class="contact-info">
                             <div class="profile-image-wrapper">
                                 <img :src="'img/' + contact.avatar" alt="">
@@ -113,7 +113,7 @@
                         </ul>
                     </div>
     
-                    <input class="contact-search" type="text" v-model="newMessage" @keyUp.enter="sendMessage(currentIndex), receiveMessage(currentIndex)" placeholder="Scrivi un messaggio">
+                    <input class="contact-search" type="text" v-model="newMessage" @keyUp.enter="sendMessage(currentIndex)" placeholder="Scrivi un messaggio">
     
                     <div class="user-command">
                         <ul>

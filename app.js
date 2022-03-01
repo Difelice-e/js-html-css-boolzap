@@ -2,6 +2,7 @@ let app = new Vue(
     {
         el: '#root',
         data: {
+            newSearch: '',
             newMessage: '',
             currentIndex: 0,
             contacts: [
@@ -92,6 +93,7 @@ let app = new Vue(
         }, 
         methods: {
             receiveMessage: function(currentIndex) {
+                console.log("sono entratoooO")
                 setTimeout(() => {
                     const message = {
                         date: '28/02/2022 18:56',
@@ -112,7 +114,23 @@ let app = new Vue(
                 this.contacts[currentIndex].messages.push(message)
                 }
                 this.newMessage = '';
+                this.receiveMessage(currentIndex);
+            },
+            findChat: function() {
+                let self = this;
+                this.contacts.forEach(element => {
+                    if (element.name.toLowerCase().includes(self.newSearch.toLowerCase())) {
+                        element.visible = true;
+                        console.log(element.name, element.visible, 'true'); 
+                        return true
+                    } else {
+                        element.visible = false;
+                        console.log(element.name, element.visible, 'false');
+                        return false
+                    }
+                });
             },
         }
+        
     }
 )
