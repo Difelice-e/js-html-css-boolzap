@@ -1,3 +1,11 @@
+:root {
+    --app-heavy-green: #00A884;
+    --app-green: #D9FDD3;
+    --app-light-green: #9FDED1;
+    --app-grey: #5D6D76;
+    --app-blue: #8EDAFD;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -29,7 +37,7 @@
 
 /* barra dei comandi superiore */
 #tab {
-    background-color: #00A884;
+    background-color: var(--app-heavy-green);
     height: 30px;
     display: flex;
     justify-content: space-between;
@@ -38,12 +46,12 @@
 }
 
 #logo {
-    color: #9FDED1;
+    color: var(--app-light-green);
     line-height: 30px;
 }
 
 #command {
-    color: #9FDED1;
+    color: var(--app-light-green);
     line-height: 30px;
 }
 
@@ -90,7 +98,7 @@
 
 .user-command {
    display: flex;
-   color: #5D6D76;
+   color: var(--app-grey);
 }
 
 .user-command ul {
@@ -104,7 +112,7 @@
 /* alert notifiche   */
 .alert-pop {
     height: 80px;
-    background-color: #8EDAFD;
+    background-color: var(--app-blue);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -116,7 +124,7 @@
 
 .alert-pop-link {
     text-decoration: underline;
-    color: #5D6D76;
+    color: var(--app-grey);
 }
 
 .bell-wrapper {
@@ -127,7 +135,7 @@
 }
 
 .bell-icon {
-    color: #8EDAFD;
+    color: var(--app-blue);
 }
 
 /* barra di ricerca   */
@@ -146,7 +154,7 @@
 
 .search-icon {
     padding: 0 18px;
-    color: #5D6D76;
+    color: var(--app-grey);
 }
 
 /* area dei contatti  */
@@ -162,7 +170,7 @@
 }
 
 .contact-user.active {
-    background-color: #D1CFC8;
+    background-color: rgba(216, 214, 210, 0.5);
 }
 
 .contact-info {
@@ -178,12 +186,12 @@
 
 .user-last-message {
     font-size: 1rem;
-    color: #5D6D76;
+    color: var(--app-grey);
 }
 
 .contact-time {
-    color: #5D6D76;
-    font-size: 0.8rem;
+    color: var(--app-grey);
+    font-size: 0.7rem;
 }
 
 /* sezione di destra, chat in corso */
@@ -197,10 +205,9 @@
 .chat-area {
     flex-grow: 1;
     padding: 20px 70px;
-    background-color: #EFEAE2;
     display: none;
+    gap: 1px;
     flex-direction: column;
-    gap: 5px;
     background-image: url(img/whatsapp-bg.jpg);
 }
 
@@ -211,16 +218,17 @@
 .message-wrapper {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #D1CFC8;
+    box-shadow: 0px 3px 8px #D1CFC8;
     min-width: 50px;
     gap: 10px;
     padding: 5px 8px;
     border-radius: 5px;
     min-height: 34px;
+    max-width: 75%;
 }
 
 .sent-message {
-    background-color: #D9FDD3;
+    background-color: var(--app-green);
     align-self: flex-end;
 }
 
@@ -229,12 +237,16 @@
     align-self: flex-start;
 }
 
+.sent-message + .received-message, .received-message + .sent-message {
+    margin-top: 20px;
+}
+
 .message-text {
     align-self: flex-start;
 }
 
 .message-time {
-    color: #5D6D76;
+    color: var(--app-grey);
     font-size: 0.7rem;
     align-self: flex-end;
 }
