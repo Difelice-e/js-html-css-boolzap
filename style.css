@@ -225,6 +225,18 @@
     border-radius: 5px;
     min-height: 34px;
     max-width: 75%;
+    position: relative;
+    filter: drop-shadow( 0px 2px 2px #D1CFC8);
+}
+
+.message-wrapper:before {
+    content: '';
+    display: none;
+    position : absolute;
+    top: 0;
+    border: 5px solid;
+    border-top-width: 6px;
+    border-bottom-width: 6px;
 }
 
 .sent-message {
@@ -232,12 +244,45 @@
     align-self: flex-end;
 }
 
+.sent-message::before {
+    border-color: var(--app-green);
+    left: 100%;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
 .received-message {
     background-color: white;
     align-self: flex-start;
+    border-top-left-radius: 0;
 }
 
-.sent-message + .received-message, .received-message + .sent-message {
+.received-message::before {
+    border-color: white;
+    right: 100%; 
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.sent-message:first-child::before, 
+.received-message + .sent-message::before,
+.received-message:first-child::before, 
+.sent-message + .received-message::before {
+    display: block;
+}
+
+.sent-message:first-child, 
+.received-message + .sent-message {
+    border-top-right-radius: 0;
+}
+
+.received-message:first-child, 
+.sent-message + .received-message {
+    border-top-left-radius: 0
+}
+
+.sent-message + .received-message, 
+.received-message + .sent-message {
     margin-top: 20px;
 }
 
