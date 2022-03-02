@@ -147,7 +147,7 @@ let app = new Vue(
                 if (this.contacts[currentIndex].messages.length == 1) {
                     const message = {
                         date: '28/02/2022 18:56',
-                        text: 'hidden',
+                        text: ' ',
                         status: '',
                         dropdown: ''
                     }
