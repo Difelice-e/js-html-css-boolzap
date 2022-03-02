@@ -146,7 +146,7 @@ let app = new Vue(
             removeMessage: function(currentIndex, i) {
                 if (this.contacts[currentIndex].messages.length == 1) {
                     const message = {
-                        date: '',
+                        date: '28/02/2022 18:56',
                         text: 'hidden',
                         status: '',
                         dropdown: ''
