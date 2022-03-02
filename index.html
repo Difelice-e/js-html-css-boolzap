@@ -99,7 +99,7 @@
                 </div>
     
                 <div class="chat-area" v-for="(contact, index) in contacts" :class="index == currentIndex ? 'active' : ' '">
-                    <div v-for="(message, messIndex) in contacts[index].messages" class="message-wrapper" :class="[message.status == 'sent' ? 'sent-message' : 'received-message', message.dropdown == true ? 'z-index100' : '' ]">
+                    <div v-for="(message, messIndex) in contacts[index].messages" class="message-wrapper" :class="[message.status == 'sent' ? 'sent-message' : 'received-message', message.dropdown == true ? 'z-index100' : '', message.text === 'hidden' ? 'hidden' : '' ]">
                         <span class="message-text">{{message.text}}</span>     
                         <span class="message-time">{{getTime(message.date)}}</span>
                         <i class="fa-solid fa-chevron-down dropdown-toggle" @click="openDropdown(currentIndex, messIndex)"></i>

@@ -86,6 +86,7 @@ let app = new Vue(
                 avatar: 'elonmusk.jpg',
                 visible: true,
                 messages: [
+                    
                     {
                         date: '10/01/2020 15:30',
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -140,10 +141,19 @@ let app = new Vue(
                 });
             },
             openDropdown: function (currentIndex, i) {
-                console.log(this.contacts[currentIndex].messages[i].dropdown)
                 this.contacts[currentIndex].messages[i].dropdown = !this.contacts[currentIndex].messages[i].dropdown; 
             },
             removeMessage: function(currentIndex, i) {
+                if (this.contacts[currentIndex].messages.length == 1) {
+                    const message = {
+                        date: '',
+                        text: 'hidden',
+                        status: '',
+                        dropdown: ''
+                    }
+                    this.contacts[currentIndex].messages.push(message)
+                    console.log(this.contacts[currentIndex].messages)
+                }
                 this.contacts[currentIndex].messages.splice(i, 1);
             },
             getDate: function(date) {

@@ -219,6 +219,10 @@
     display: flex;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 .message-wrapper {
     display: flex;
     justify-content: space-between;
