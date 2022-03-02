@@ -1,3 +1,4 @@
+/* common  */
 :root {
     --app-heavy-green: #00A884;
     --app-green: #D9FDD3;
@@ -219,6 +220,7 @@
     display: flex;
 }
 
+/* stile dei messaggi  */
 .message-wrapper {
     display: flex;
     justify-content: space-between;
@@ -232,15 +234,6 @@
     max-width: 75%;
     position: relative;
     filter: drop-shadow( 0px 2px 2px #D1CFC8);
-}
-
-.message-wrapper.hidden {
-    display: none;
-}
-
-.z-index100 {
-    z-index: 100;
-    box-shadow: 0px 0px 3px #D1CFC8;
 }
 
 .message-wrapper:before {
@@ -258,17 +251,28 @@
     align-self: flex-end;
 }
 
+.received-message {
+    background-color: white;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+}
+
+.message-text {
+    align-self: flex-start;
+}
+
+.message-time {
+    color: var(--app-grey);
+    font-size: 0.7rem;
+    align-self: flex-end;
+}
+
+/* "baffo" dei messaggi  */
 .sent-message::before {
     border-color: var(--app-green);
     left: 100%;
     border-right-color: transparent;
     border-bottom-color: transparent;
-}
-
-.received-message {
-    background-color: white;
-    align-self: flex-start;
-    border-top-left-radius: 0;
 }
 
 .received-message::before {
@@ -300,16 +304,17 @@
     margin-top: 20px;
 }
 
-.message-text {
-    align-self: flex-start;
+/* classi di bugfix  */
+.message-wrapper.hidden {
+    display: none;
 }
 
-.message-time {
-    color: var(--app-grey);
-    font-size: 0.7rem;
-    align-self: flex-end;
+.z-index100 {
+    z-index: 100;
+    box-shadow: 0px 0px 3px #D1CFC8;
 }
 
+/* dropdown sui messaggi  */
 .dropdown-toggle {
     color: var(--app-grey);
     position: absolute;
