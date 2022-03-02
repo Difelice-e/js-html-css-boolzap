@@ -227,7 +227,8 @@
     gap: 10px;
     padding: 5px 8px;
     border-radius: 5px;
-    min-height: 34px;
+    z-index: 99;
+    min-height: 40px;
     max-width: 75%;
     position: relative;
     filter: drop-shadow( 0px 2px 2px #D1CFC8);
@@ -298,6 +299,40 @@
     color: var(--app-grey);
     font-size: 0.7rem;
     align-self: flex-end;
+}
+
+.dropdown-toggle {
+    color: var(--app-grey);
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 999;
+    font-size: 0.8rem;
+    visibility: hidden;
+}
+
+.message-wrapper:hover .dropdown-toggle {
+    visibility: visible;
+}
+
+.dropdown {
+    width: 100px;
+    background-color: white;
+    border: 1px solid var(--app-grey);
+    position: absolute;
+    top: 18px;
+    right: 12px;
+    visibility: hidden;
+    z-index: 99999;
+}
+
+.dropdown.active {
+    visibility: visible;
+}
+
+.dropdown span {
+    display: block;
+    margin: 10px;
 }
 
 /* zona di scrittura del messaggio  */
