@@ -83,7 +83,7 @@
     
                         <div>
                             <h4 class="user-name">{{contacts[currentIndex].name}}</h4>
-                            <p class="user-last-message">ultimo accesso: {{contacts[currentIndex].messages[contacts[currentIndex].messages.length-1].date}}</p>
+                            <p class="user-last-message">ultimo accesso: {{getDate(contacts[currentIndex].messages[contacts[currentIndex].messages.length-1].date)}} alle {{getTime(contacts[currentIndex].messages[contacts[currentIndex].messages.length-1].date)}}</p>
                         </div>
                     </div>
     
@@ -99,9 +99,9 @@
                 </div>
     
                 <div class="chat-area" v-for="(contact, index) in contacts" :class="index == currentIndex ? 'active' : ' '">
-                    <div v-for="(message, messIndex) in contacts[index].messages" class="message-wrapper" :class="message.status == 'sent' ? 'sent-message' : 'received-message'">
+                    <div v-for="(message, messIndex) in contacts[index].messages" class="message-wrapper" :class="[message.status == 'sent' ? 'sent-message' : 'received-message', message.dropdown == true ? 'z-index100' : '' ]">
                         <span class="message-text">{{message.text}}</span>     
-                        <span class="message-time">{{message.date}}</span>
+                        <span class="message-time">{{getTime(message.date)}}</span>
                         <i class="fa-solid fa-chevron-down dropdown-toggle" @click="openDropdown(currentIndex, messIndex)"></i>
                         <div class="dropdown" id="dropdown" :class="message.dropdown == true ? 'active' : '' ">
                             <span @click="removeMessage(currentIndex, messIndex)">Elimina</span>

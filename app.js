@@ -145,8 +145,13 @@ let app = new Vue(
             },
             removeMessage: function(currentIndex, i) {
                 this.contacts[currentIndex].messages.splice(i, 1);
-                console.log('cancella')
             },
+            getDate: function(date) {
+                return date.slice(0, 10);
+            },
+            getTime: function(date) {
+                return date.slice(10, 16);
+            }
         }
         
     }
