@@ -144,16 +144,6 @@ let app = new Vue(
                 this.contacts[currentIndex].messages[i].dropdown = !this.contacts[currentIndex].messages[i].dropdown; 
             },
             removeMessage: function(currentIndex, i) {
-                if (this.contacts[currentIndex].messages.length == 1) {
-                    const message = {
-                        date: '28/02/2022 18:56',
-                        text: ' ',
-                        status: '',
-                        dropdown: ''
-                    }
-                    this.contacts[currentIndex].messages.push(message)
-                    console.log(this.contacts[currentIndex].messages)
-                }
                 this.contacts[currentIndex].messages.splice(i, 1);
             },
             getDate: function(date) {
