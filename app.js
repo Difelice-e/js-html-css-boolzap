@@ -108,7 +108,7 @@ let app = new Vue(
                 console.log("sono entratoooO")
                 setTimeout(() => {
                     const message = {
-                        date: '28/02/2022 18:56',
+                        date: dayjs().format('DD/MM/YYYY HH:mm'),
                         text: 'ok',
                         status: 'received',
                         dropdown: false
@@ -120,7 +120,7 @@ let app = new Vue(
             sendMessage: function(currentIndex) {
                 if (this.newMessage !== '') {
                     const message = {
-                        date: '28/02/2022 18:56',
+                        date: dayjs().format('DD/MM/YYYY HH:mm'),
                         text: this.newMessage,
                         status: 'sent',
                         dropdown: false
@@ -144,6 +144,7 @@ let app = new Vue(
                 this.contacts[currentIndex].messages[i].dropdown = !this.contacts[currentIndex].messages[i].dropdown; 
             },
             removeMessage: function(currentIndex, i) {
+
                 this.contacts[currentIndex].messages.splice(i, 1);
             },
             getDate: function(date) {

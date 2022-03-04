@@ -161,6 +161,7 @@
 /* area dei contatti  */
 .contact-area {
     flex-grow: 1;
+    overflow: auto;
 }
 
 .contact-user {
@@ -214,6 +215,8 @@
     gap: 1px;
     flex-direction: column;
     background-image: url(img/whatsapp-bg.jpg);
+    overflow-y: auto;
+    max-height: 100%;
 }
 
 .chat-area.active {
